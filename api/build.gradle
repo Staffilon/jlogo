@@ -5,3 +5,7 @@
 plugins {
     id 'it.unicam.cs.pa.jlogo.java-library-conventions'
 }
+
+dependencies {
+    implementation 'org.jetbrains:annotations:20.1.0'
+}

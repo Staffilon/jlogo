@@ -1,0 +1,72 @@
+package it.unicam.cs.pa.jlogo.api.module;
+
+import it.unicam.cs.pa.jlogo.api.color.RGBColor;
+import it.unicam.cs.pa.jlogo.api.color.RGBColorLogo;
+
+import java.util.ArrayList;
+import java.util.List;
+
+/**
+ * Class used to represent an area which can be used to draw onto, used by the logo application
+ *
+ * @author Stanislav Teghipco
+ */
+public class DrawableAreaLogo implements DrawableArea {
+
+    private RGBColor color;
+    private double height;
+    private double width;
+
+    /**
+     * It's the default position of the cursor when starting the application
+     */
+    private Point2D homePosition;
+
+    /**
+     * Contains all the shapes drawn on the area
+     */
+    private List<Shape2D> shapes;
+
+    /**
+     * Builds an area with default values
+     *
+     * @param height the height of the area
+     * @param width  the width of the area
+     */
+    public DrawableAreaLogo(double height, double width) {
+        this.homePosition = new Point2D(height / 2, width / 2);
+        this.height = height;
+        this.width = width;
+        this.color = new RGBColorLogo(255, 255, 255);
+        this.shapes = new ArrayList<>();
+    }
+
+    @Override
+    public RGBColor getAreaColor() {
+        return color;
+    }
+
+    @Override
+    public double getAreaWidth() {
+        return width;
+    }
+
+    @Override
+    public double getAreaHeight() {
+        return height;
+    }
+
+    @Override
+    public List<Shape2D> getShapes() {
+        return shapes;
+    }
+
+    @Override
+    public void draw(Shape2D newShape) {
+        shapes.add(newShape);
+    }
+
+    public Point2D getHomePosition() {
+        return homePosition;
+    }
+}
