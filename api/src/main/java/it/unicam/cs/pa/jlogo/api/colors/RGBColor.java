@@ -1,4 +1,4 @@
-package it.unicam.cs.pa.jlogo.api.color;
+package it.unicam.cs.pa.jlogo.api.colors;
 
 /**
  * This interface is going to be implemented in every type of color class
@@ -6,7 +6,7 @@ package it.unicam.cs.pa.jlogo.api.color;
  * @author Stanislav Teghipco
  */
 
-public interface RGBColor {
+public interface RGBColor extends Color{
 
     /**
      * Return the red byte of the color

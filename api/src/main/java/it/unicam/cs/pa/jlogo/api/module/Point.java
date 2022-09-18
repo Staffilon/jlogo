@@ -6,7 +6,7 @@ package it.unicam.cs.pa.jlogo.api.module;
  * @author Stanislav Teghipco
  */
 
-public class Point2D implements Coordinate2D{
+public class Point implements Coordinate {
 
     /**
      * the x and y attributes are used to represent the coordinate of the point in the bidimensional area
@@ -22,7 +22,7 @@ public class Point2D implements Coordinate2D{
      * @param y is the value of the vertical axis
      */
 
-    public Point2D(double x, double y){
+    public Point(double x, double y) {
         this.x = x;
         this.y = y;
     }
@@ -30,7 +30,7 @@ public class Point2D implements Coordinate2D{
     /**
      * Creates a point without given values, with default coordinates
      */
-    public Point2D(){
+    public Point() {
         this.x = 0d;
         this.y = 0d;
     }
@@ -43,5 +43,12 @@ public class Point2D implements Coordinate2D{
     @Override
     public double getY() {
         return y;
+    }
+
+    @Override
+    public String getLogoFormat() {
+        String logoFormat = x + " " + y;
+
+        return logoFormat;
     }
 }

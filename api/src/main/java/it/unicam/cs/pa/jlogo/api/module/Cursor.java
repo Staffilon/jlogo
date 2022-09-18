@@ -1,6 +1,6 @@
 package it.unicam.cs.pa.jlogo.api.module;
 
-import it.unicam.cs.pa.jlogo.api.color.RGBColor;
+import it.unicam.cs.pa.jlogo.api.colors.RGBColor;
 
 /**
  * This interface represents the core features a cursor within a logo application needs to have
@@ -43,7 +43,7 @@ public interface Cursor {
      *
      * @return the position of the cursor
      */
-    Point2D getPosition();
+    Point getPosition();
 
     /**
      * Returns the direction in which the cursor is going to move;

@@ -1,6 +1,7 @@
 package it.unicam.cs.pa.jlogo.api.module;
 
-import it.unicam.cs.pa.jlogo.api.color.RGBColor;
+import it.unicam.cs.pa.jlogo.api.colors.RGBColor;
+import it.unicam.cs.pa.jlogo.api.shapes.SingleStrokeShape;
 
 import java.util.List;
 
@@ -37,12 +38,12 @@ public interface DrawableArea {
      *
      * @return all the shapes present in the area
      */
-    List<Shape2D> getShapes();
+    List<SingleStrokeShape> getDrawnShapes();
 
     /**
      * Adds a shape to the list of shapes drawn on the area
      *
      * @param newShape the shape to be added
      */
-    void draw(Shape2D newShape);
+    void drawShape(SingleStrokeShape newShape);
 }

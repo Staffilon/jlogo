@@ -1,24 +1,27 @@
-package it.unicam.cs.pa.jlogo.api.module;
+package it.unicam.cs.pa.jlogo.api.shapes;
+
+import it.unicam.cs.pa.jlogo.api.colors.RGBColor;
+import it.unicam.cs.pa.jlogo.api.module.Point;
 
 /**
  * This interface represents a bidimensional shape
  *
  * @author Stanislav Teghipco
  */
-public interface Shape2D {
+public interface SingleStrokeShape extends Shape {
     /**
      * This method returns the starting point of the shape
      *
      * @return the point in which the shape starts
      */
-    Point2D getStartPoint();
+    Point getStartPoint();
 
     /**
      * This method returns the ending point of the shape
      *
      * @return the point in which the shape ends
      */
-    Point2D getEndPoint();
+    Point getEndPoint();
 
     /**
      * This method returns the size of the shape
@@ -28,7 +31,13 @@ public interface Shape2D {
     int getSize();
 
     /**
-     * Checks whether the given size is valid, in afftermative case it returns it,
+     * This method returns the color of the shape
+     * @return the RGBColor representing the color of the shape
+     */
+    RGBColor getColor();
+
+    /**
+     * Checks whether the given size is valid, in affirmative case it returns it,
      * otherwise it throws an IllegalArgumentException
      *
      * @param size size that is going to be checked

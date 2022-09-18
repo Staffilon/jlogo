@@ -1,6 +1,6 @@
 package it.unicam.cs.pa.jlogo.api;
-import it.unicam.cs.pa.jlogo.api.color.RGBColor;
-import it.unicam.cs.pa.jlogo.api.color.RGBColorLogo;
+import it.unicam.cs.pa.jlogo.api.colors.RGBColor;
+import it.unicam.cs.pa.jlogo.api.colors.RGBColorLogo;
 
 import org.jetbrains.annotations.NotNull;
 import org.junit.jupiter.api.Test;

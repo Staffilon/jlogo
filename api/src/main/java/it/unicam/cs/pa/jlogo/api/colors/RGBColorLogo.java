@@ -1,4 +1,4 @@
-package it.unicam.cs.pa.jlogo.api.color;
+package it.unicam.cs.pa.jlogo.api.colors;
 
 /**
  * This class is used to represent the colors used for drawing in the RGB (red-green-blue) format
@@ -46,5 +46,12 @@ public class RGBColorLogo implements RGBColor {
     @Override
     public int getBlueByte() {
         return blueByte;
+    }
+
+    @Override
+    public String getLogoFormat() {
+        String logoFormat = redByte + " " + greenByte + " " + blueByte;
+
+        return logoFormat;
     }
 }

@@ -1,7 +1,8 @@
 package it.unicam.cs.pa.jlogo.api.module;
 
-import it.unicam.cs.pa.jlogo.api.color.RGBColor;
-import it.unicam.cs.pa.jlogo.api.color.RGBColorLogo;
+import it.unicam.cs.pa.jlogo.api.colors.RGBColor;
+import it.unicam.cs.pa.jlogo.api.colors.RGBColorLogo;
+import it.unicam.cs.pa.jlogo.api.shapes.SingleStrokeShape;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -20,23 +21,31 @@ public class DrawableAreaLogo implements DrawableArea {
     /**
      * It's the default position of the cursor when starting the application
      */
-    private Point2D homePosition;
+    private Point homePosition;
 
     /**
      * Contains all the shapes drawn on the area
      */
-    private List<Shape2D> shapes;
+    private List<SingleStrokeShape> shapes;
+
+    /**
+     * Cursor that will be used to carry out instructions
+     */
+    private CursorLogo cursor;
 
     /**
      * Builds an area with default values
      *
      * @param height the height of the area
      * @param width  the width of the area
+     * @throws IllegalArgumentException throws this exception when height and/or width are negative
      */
-    public DrawableAreaLogo(double height, double width) {
-        this.homePosition = new Point2D(height / 2, width / 2);
+    public DrawableAreaLogo(double height, double width) throws IllegalArgumentException{
+        if(height < 0 || width < 0)
+            throw new IllegalArgumentException("Illegal height and/or width of the drawing area, they should not be negative!");
         this.height = height;
         this.width = width;
+        this.homePosition = new Point(height / 2, width / 2);
         this.color = new RGBColorLogo(255, 255, 255);
         this.shapes = new ArrayList<>();
     }
@@ -57,16 +66,28 @@ public class DrawableAreaLogo implements DrawableArea {
     }
 
     @Override
-    public List<Shape2D> getShapes() {
+    public List<SingleStrokeShape> getDrawnShapes() {
         return shapes;
     }
 
     @Override
-    public void draw(Shape2D newShape) {
+    public void drawShape(SingleStrokeShape newShape) {
         shapes.add(newShape);
     }
 
-    public Point2D getHomePosition() {
+    public Point getHomePosition() {
         return homePosition;
+    }
+
+    public CursorLogo getCursor(){
+        return cursor;
+    }
+
+    public void moveCursorBy(double distance){
+
+        //calcola nuovo punto
+        //crea linea
+        //assegna nuova posizione al cursore
+        //assegna nuova shape all'area
     }
 }
